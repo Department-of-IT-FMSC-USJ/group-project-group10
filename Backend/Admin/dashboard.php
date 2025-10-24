@@ -17,7 +17,7 @@ $cat_count = ($cat_result->num_rows > 0) ? $cat_result->fetch_assoc()['total_cat
 $cat_sql = "SELECT cat_id, cat_name FROM categories ORDER BY cat_name ASC";
 $cat_result = $conn->query($cat_sql);
 
-$sql = "SELECT item_id, item_name, price, image_path,`description`, location FROM items ORDER BY posted_at DESC LIMIT 10";
+$sql = "SELECT item_id, item_name, price, image_path,`description`, location FROM items ORDER BY posted_at DESC LIMIT 12";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -126,11 +126,11 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         ?>
         <div class="item-card">
-            <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+            <img src="../../Uploads<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
             <h3><?php echo $row['item_name']; ?></h3>
             <p>Price: Rs. <?php echo $row['price']; ?></p>
             <p>Location: <?php echo $row['location']; ?></p>
-            <a href="../Book_item.php?item_id=<?php echo $row['item_id']; ?>"><button>Book item</button></a>
+            <a href="../book_item.php?item_id=<?php echo $row['item_id']; ?>"><button>Book item</button></a>
         </div>
         <?php
     }
