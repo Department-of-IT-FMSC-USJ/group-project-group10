@@ -126,7 +126,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         ?>
         <div class="item-card">
-            <img src="../../Uploads<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+            <img src="../<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
             <h3><?php echo $row['item_name']; ?></h3>
             <p>Price: Rs. <?php echo $row['price']; ?></p>
             <p>Location: <?php echo $row['location']; ?></p>
